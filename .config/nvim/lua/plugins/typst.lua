@@ -1,7 +1,7 @@
 return {
   -- 1. Ensure tinymist is installed via Mason
   {
-    "williamboman/mason.nvim",
+    "mason-org/mason.nvim",
     opts = {
       ensure_installed = {
         "tinymist",

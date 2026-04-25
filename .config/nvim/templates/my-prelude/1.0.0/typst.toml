@@ -1,0 +1,4 @@
+[package]
+name = "my-prelude"
+version = "1.0.0"
+entrypoint = "lib.typ"
