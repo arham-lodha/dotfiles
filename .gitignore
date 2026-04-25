@@ -1,5 +1,8 @@
 .config/github-copilot/
 .config/configstore/
 .config/firebase/
-.config/zsh/plugins/
 .config/ipython/
+.config/zsh/.zcompdump-*
+.config/zsh/.zsh_history
+.config/oh-my-zsh/log/
+.config/oh-my-zsh/cache/
