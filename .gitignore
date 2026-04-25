@@ -1,4 +1,5 @@
 .config/github-copilot/
 .config/configstore/
 .config/firebase/
+.config/zsh/plugins/
 .config/ipython/
