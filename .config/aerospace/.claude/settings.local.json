@@ -1,7 +1,0 @@
-{
-  "permissions": {
-    "allow": [
-      "Bash(chmod +x /Users/arhamlodha/.config/aerospace/scripts/mode-changed.sh /Users/arhamlodha/.config/aerospace/scripts/maximize.sh /Users/arhamlodha/.config/aerospace/scripts/almost-maximize.sh)"
-    ]
-  }
-}
