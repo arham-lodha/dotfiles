@@ -8,7 +8,7 @@ export ZSH=$HOME/.config/oh-my-zsh
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="spaceship"
+ZSH_THEME="eastwood"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -70,7 +70,7 @@ ZSH_THEME="spaceship"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
+plugins=(git docker )
 
 source $ZSH/oh-my-zsh.sh
 
@@ -99,3 +99,9 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+
+# Bare-repo dotfiles manager: tracks files in $HOME via the bare repo at $HOME/dotfiles
+alias dot='/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME'
+# Don't show every untracked file in $HOME when running `dot status`
+dot config --local status.showUntrackedFiles no 2>/dev/null
+source ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
