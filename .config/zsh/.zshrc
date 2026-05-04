@@ -128,5 +128,8 @@ alias la="eza -lah --icons --git --group-directories-first"
 
 # 'lt' - The tree view (shows folder structure up to 2 levels deep)
 alias lt="eza --tree --level=2 --icons --git"
+
+alias cat="bat"
+
 # To customize prompt, run `p10k configure` or edit ~/.config/zsh/p10k.zsh.
 [[ ! -f ~/.config/zsh/p10k.zsh ]] || source ~/.config/zsh/p10k.zsh
