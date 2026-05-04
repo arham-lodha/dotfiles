@@ -1,6 +1,13 @@
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.config/oh-my-zsh
 
@@ -8,7 +15,7 @@ export ZSH=$HOME/.config/oh-my-zsh
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="eastwood"
+ZSH_THEME="powerlevel10k/powerlevel10k"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -70,7 +77,7 @@ ZSH_THEME="eastwood"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git docker )
+plugins=(git docker zsh-autosuggestions)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -87,7 +94,10 @@ source $ZSH/oh-my-zsh.sh
 # else
 #   export EDITOR='mvim'
 # fi
+export EDITOR='nvim'
+export VISUAL='nvim'
 
+alias vim='nvim'
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
 
@@ -105,3 +115,18 @@ alias dot='/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME'
 # Don't show every untracked file in $HOME when running `dot status`
 dot config --local status.showUntrackedFiles no 2>/dev/null
 source ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+eval "$(zoxide init zsh --cmd cd)"
+
+# The standard replacement
+alias ls="eza --icons --git --group-directories-first"
+
+# 'll' - The long list view (shows permissions, sizes, dates)
+alias ll="eza -lh --icons --git --group-directories-first"
+
+# 'la' - The "show me everything" view (includes hidden files)
+alias la="eza -lah --icons --git --group-directories-first"
+
+# 'lt' - The tree view (shows folder structure up to 2 levels deep)
+alias lt="eza --tree --level=2 --icons --git"
+# To customize prompt, run `p10k configure` or edit ~/.config/zsh/p10k.zsh.
+[[ ! -f ~/.config/zsh/p10k.zsh ]] || source ~/.config/zsh/p10k.zsh
