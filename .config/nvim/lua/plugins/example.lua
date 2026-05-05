@@ -3,9 +3,27 @@
 -- lazyvim.json — manage them with `:LazyExtras`.
 
 return {
-  -- Colorscheme
-  { "catppuccin/nvim", name = "catppuccin", priority = 1000 },
-  { "LazyVim/LazyVim", opts = { colorscheme = "catppuccin" } },
+  -- Colorscheme: match Ghostty's Catppuccin Mocha + let its background opacity show through
+  {
+    "catppuccin/nvim",
+    name = "catppuccin",
+    priority = 1000,
+    opts = {
+      flavour = "mocha",
+      transparent_background = true,
+      integrations = {
+        cmp = true,
+        gitsigns = true,
+        treesitter = true,
+        telescope = { enabled = true },
+        mason = true,
+        native_lsp = { enabled = true },
+        which_key = true,
+        mini = { enabled = true },
+      },
+    },
+  },
+  { "LazyVim/LazyVim", opts = { colorscheme = "catppuccin-mocha" } },
 
   -- Disable trouble (delete this line to re-enable)
   { "folke/trouble.nvim", enabled = false },

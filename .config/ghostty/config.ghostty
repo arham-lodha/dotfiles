@@ -1,3 +1,21 @@
 theme = Catppuccin Mocha
 
+macos-option-as-alt = left
+
+# tmux macOS-like shortcuts (prefix = Alt+Z = \x1bz)
+keybind = cmd+t=text:\x1bzc
+keybind = cmd+shift+t=text:\x1bzC
+keybind = cmd+w=text:\x1bzx
+keybind = cmd+d=text:\x1bz|
+keybind = cmd+shift+d=text:\x1bz-
+keybind = cmd+z=text:\x1bzz
+keybind = cmd+]=text:\x1bzn
+keybind = cmd+[=text:\x1bzp
+keybind = ctrl+tab=text:\x1bzn
+keybind = ctrl+shift+tab=text:\x1bzp
+
 background-opacity = 0.97
+
+# Breathing room on the sides
+window-padding-x = 16
+window-padding-balance = true
